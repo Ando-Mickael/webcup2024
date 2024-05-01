@@ -1,0 +1,8 @@
+node_modules
+vscode
+
+.env
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+server.js

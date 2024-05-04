@@ -7,9 +7,54 @@
   max-width: 100vw;
   overflow: hidden;
   background-color: black;
+  position: relative;
 }
 
 .veteran-gallery-text {
+  width: 500px;
+  height: 100px;
+  font-size: 20px;
+  font-family: "Poppins-Bold";
+  color: antiquewhite;
+  text-align: center;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.veteran-gallery-title {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  text-align: center;
+  font-family: "Poppins-Bold";
+  color: antiquewhite;
   font-size: 28px;
-  font-family: "Poppins";
+  position: sticky;
+  top: 0;
+}
+.switch-frame-ui-container {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100px;
+}
+.switch-frame-ui {
+  width: 100px;
+  height: 50px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border: 0;
+  font-family: "Poppins-Bold";
+  font-size: 18px;
+}
+.switch-frame-ui:hover {
+  cursor: pointer;
 }

@@ -1,5 +1,9 @@
-const prisma = require("./src/libs/prisma");
+const mongoose = require("mongoose");
+const { uri } = require("./src/libs/db");
+const User = require("./src/models/User");
 
-prisma.user.findMany().then((data) => {
+mongoose.connect(uri);
+
+User.find().then((data) => {
   console.log(data);
 });

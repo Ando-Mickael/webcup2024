@@ -1,0 +1,41 @@
+.game-lobby-ui-container {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  font-family: "Nebula-Regular";
+  font-size: 45px;
+}
+.play-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #faf9f6;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-family: "Poppins-Bold";
+  pointer-events: none;
+}
+.google-sound-restriction-overlay {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #1f1f1f;
+  z-index: 3;
+}
+.enter-lobby-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #faf9f6;
+  font-family: "Poppins-Bold";
+  border: 0;
+}
+.enter-lobby-button:hover {
+  background-color: #d3d3d3;
+  cursor: pointer;
+}

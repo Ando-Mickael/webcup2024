@@ -18,6 +18,7 @@ app.use(express.json());
 // routes
 app.use("/", require("./src/routes"));
 app.use("/auth", require("./src/routes/auth.route"));
+app.use("/crud", require("./src/routes/crud.route"));
 
 // run server
 if (port) {

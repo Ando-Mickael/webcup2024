@@ -20,4 +20,15 @@ async function login(req, res) {
   }
 }
 
-module.exports = { login };
+async function register(req, res) {
+  const { nickname, email, password } = req.body;
+
+  try {
+    const newUser = await User.create({ nickname, email, password });
+    res.json(newUser);
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+}
+
+module.exports = { login, register };

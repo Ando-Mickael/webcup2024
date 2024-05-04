@@ -3,3 +3,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: "Nebula-Hollow";
+  src: url("../public/fonts/Nebula/Nebula-Hollow.otf") format("opentype");
+}
+@font-face {
+  font-family: "Nebula-Regular";
+  src: url("../public/fonts/Nebula/Nebula-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("../public/fonts/poppins/Poppins-Bold.ttf");
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

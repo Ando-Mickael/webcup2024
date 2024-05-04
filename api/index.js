@@ -3,13 +3,16 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const { uri } = require("./src/libs/db");
+const http = require("http");
+const initSocket = require("./src/socket");
 
 // variables
 const app = express();
 const port = process.env.PORT;
+const server = http.createServer(app);
 
-// connect to DB
 mongoose.connect(uri);
+initSocket(server);
 
 // middlewares
 app.use(require("cors")());
@@ -23,7 +26,7 @@ app.use("/veteran-asking", require("./src/routes/veteranAsking.route"));
 
 // run server
 if (port) {
-  app.listen(port, () => console.log(`http://localhost:${port}`));
+  server.listen(port, () => console.log(`http://localhost:${port}`));
 }
 
-module.exports = app;
+module.exports = server;

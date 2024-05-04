@@ -1,0 +1,15 @@
+.veteran-gallery-container {
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  background-color: black;
+}
+
+.veteran-gallery-text {
+  font-size: 28px;
+  font-family: "Poppins";
+}

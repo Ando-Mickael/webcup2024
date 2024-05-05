@@ -1,1 +1,1 @@
-export const apiUrl = "https://webcup2024.vercel.app";
+export const apiUrl = import.meta.env.VITE_API_URL;

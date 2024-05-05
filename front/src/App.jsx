@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import UploadPhoto from "./components/UploadPhoto";
 import IndexPage from "./pages/IndexPage";
 import Museum from "./pages/Museum";
 import VeteranGalleryPage from "./pages/VeteranGalleryPage/VeteranGalleryPage";
@@ -13,6 +14,7 @@ const routes = [
   { path: "/auth/register", element: <Register /> },
   { path: "/veteran-gallery", element: <VeteranGalleryPage /> },
   { path: "/museum", element: <Museum /> },
+  { path: "/upload", element: <UploadPhoto /> },
 ];
 
 export default function App() {

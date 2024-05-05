@@ -5,7 +5,6 @@ import Register from "./pages/auth/Register";
 import IndexPage from "./pages/IndexPage";
 import Museum from "./pages/Museum";
 import VeteranGalleryPage from "./pages/VeteranGalleryPage/VeteranGalleryPage";
-import WebcupWorldPage from "./pages/WebcupWorldPage/WebcupWorldPage";
 
 const routes = [
   { path: "/", element: <IndexPage /> },
@@ -13,7 +12,6 @@ const routes = [
   { path: "/auth/login", element: <Login /> },
   { path: "/auth/register", element: <Register /> },
   { path: "/veteran-gallery", element: <VeteranGalleryPage /> },
-  { path: "/webcup-world", element: <WebcupWorldPage /> },
   { path: "/museum", element: <Museum /> },
 ];
 

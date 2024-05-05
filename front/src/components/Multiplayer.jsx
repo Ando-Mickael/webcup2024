@@ -1,5 +1,6 @@
 import {
   ContactShadows,
+  Edges,
   Environment,
   OrbitControls,
   useCursor,
@@ -10,6 +11,7 @@ import { useState } from "react";
 import * as THREE from "three";
 import { charactersAtom, socket } from "./SocketManager";
 import { WebcupAvatar } from "./WebcupAvatar";
+import StaticModels from "./WebcupWorld/StaticModels";
 
 export const Multiplayer = () => {
   const [characters] = useAtom(charactersAtom);
@@ -18,20 +20,46 @@ export const Multiplayer = () => {
 
   return (
     <>
-      <Environment preset="sunset" />
-      <ambientLight intensity={0.3} />
-      <ContactShadows blur={2} />
       <OrbitControls />
+      <Environment preset="sunset" />
+      <StaticModels />
       <mesh
-        rotation-x={-Math.PI / 2}
-        position-y={-0.001}
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, 0, -10]}
         onClick={(e) => socket.emit("move", [e.point.x, 0, e.point.z])}
         onPointerEnter={() => setOnFloor(true)}
         onPointerLeave={() => setOnFloor(false)}
       >
-        <planeGeometry args={[10, 10]} />
-        <meshStandardMaterial color="#f0f0f0" />
+        <planeGeometry args={[7, 35]} />
+        <meshStandardMaterial
+          color={"rgba(31,31,31)"}
+          opacity={0.7}
+          transparent
+        />
+        <Edges linewidth={4} scale={1.05} color="white" />
       </mesh>
+
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -40]}>
+        <planeGeometry args={[7, 15]} />
+        <meshStandardMaterial
+          color={"rgba(31,31,31)"}
+          opacity={0.7}
+          transparent
+        />
+        <Edges linewidth={4} scale={1.05} color="white" />
+      </mesh>
+
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -55]}>
+        <planeGeometry args={[7, 5]} />
+        <meshStandardMaterial
+          color={"rgba(31,31,31)"}
+          opacity={0.7}
+          transparent
+        />
+        <Edges linewidth={4} scale={1.05} color="white" />
+      </mesh>
+
+      <ContactShadows blur={2} />
       {characters.map((character) => (
         <WebcupAvatar
           key={character.id}

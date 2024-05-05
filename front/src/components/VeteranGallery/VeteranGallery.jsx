@@ -9,11 +9,11 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useRef, useState } from "react";
+import useSWR from "swr";
 import { Vector3 } from "three";
+import { fetcher } from "../../lib/api";
 import { BlockCharacter } from "../Models/Block Character";
 import "./VeteranGallery.css";
-import useSWR from "swr";
-import { fetcher } from "../../lib/api";
 gsap.registerPlugin(ScrollTrigger);
 
 function getRandomPosition() {
@@ -28,23 +28,12 @@ for (let index = 0; index < 50; index++) {
   randomPositions.push(getRandomPosition());
 }
 const VeteranGallery = () => {
-  // const [data, setData] = useState();
   const [currentImage, setCurrentImage] = useState(0);
   const { data, error, isLoading } = useSWR(
     "http://192.168.88.17:1234/crud/photo",
     fetcher
   );
-  // useEffect(() => {
-  //   setData([
-  //     "img1.jpg",
-  //     "img1.jpg",
-  //     "img1.jpg",
-  //     "img1.jpg",
-  //     "img1.jpg",
-  //     "img1.jpg",
-  //     "img1.jpg",
-  //   ]);
-  // }, []);
+
   const [positionToLookAt, setPositionToLookAt] = useState(
     new Vector3(0, 0, 0)
   );
@@ -87,6 +76,7 @@ const VeteranGallery = () => {
       ) : (
         <>
           <div className="veteran-gallery-container">
+            <div className="Home center">HOME</div>
             <div className="veteran-gallery-title center">
               GALLERY FOR WEBCUP VETERAN
             </div>
@@ -94,7 +84,6 @@ const VeteranGallery = () => {
               <Canvas>
                 <color attach="background" args={["black"]} />
                 <Stars />
-                <axesHelper />
                 <Experience
                   positionToLookAt={positionToLookAt}
                   cameraPosition={cameraPosition}

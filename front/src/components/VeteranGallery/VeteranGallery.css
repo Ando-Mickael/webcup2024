@@ -61,3 +61,19 @@
 .switch-frame-ui:hover {
   cursor: pointer;
 }
+
+.Home {
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  font-family: "Poppins-Bold";
+  font-size: 16px;
+  color: antiquewhite;
+}
+
+.Home:hover {
+  cursor: pointer;
+}

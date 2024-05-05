@@ -40,9 +40,9 @@ export function WebcupAvatar({ bodyColor, id, ...props }) {
     }
 
     if (id === user) {
-      state.camera.position.x = group.current.position.x + 8;
-      state.camera.position.y = group.current.position.y + 8;
-      state.camera.position.z = group.current.position.z + 8;
+      state.camera.position.x = group.current.position.x + 0;
+      state.camera.position.y = group.current.position.y + 5;
+      state.camera.position.z = group.current.position.z + 20;
       state.camera.lookAt(group.current.position);
     }
   });

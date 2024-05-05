@@ -1,4 +1,4 @@
-import { Float, Html, Stars } from "@react-three/drei";
+import { Float, Stars, Text, useVideoTexture } from "@react-three/drei";
 import React from "react";
 import { RocketShip } from "../Models/RocketShip";
 import { Volcano2 } from "../Models/Volcano2";
@@ -10,55 +10,15 @@ const StaticModels = () => {
         scale={10}
         position={[-9, 2, -10]}
         rotation={[0, Math.PI / 2, 0]}
+        onClick={() => {
+          window.open("https://www.youtube.com/watch?v=dAfomigePEs");
+        }}
       />
       <Volcano2
         scale={2}
         position={[-7, 0, 3]}
         rotation={[0, Math.PI / 2, 0]}
       />
-      <Html
-        transform
-        position-x={-5}
-        position-y={3}
-        position-z={-5}
-        rotation-y={Math.PI / 4}
-      >
-        <div className="natural-disaster-text center">
-          NATURAL DISASTERS PREVENTION
-        </div>
-      </Html>
-      <Html
-        transform
-        position-x={-5}
-        position-y={5}
-        position-z={-5}
-        rotation-y={Math.PI / 4}
-      >
-        <div className="final-webcup-text center">WEBCUP FINAL 2023</div>
-      </Html>
-
-      <Html
-        transform
-        position-x={-6}
-        position-y={1}
-        position-z={-6}
-        rotation-y={Math.PI / 4}
-      >
-        <div className="winner-text-container">
-          <div style={{ width: "15%", height: "100%" }} className="center">
-            <img
-              style={{ objectFit: "contain", width: "100%", height: "100%" }}
-              src="/img/couronne-de-laurier.png"
-            />
-          </div>
-          <div
-            style={{ width: "85%", height: "100%" }}
-            className="winner-text center"
-          >
-            MADAGASCAR - Angry Geek
-          </div>
-        </div>
-      </Html>
 
       <Float
         speed={1}
@@ -66,69 +26,148 @@ const StaticModels = () => {
         floatIntensity={1}
         floatingRange={[-0.1, 0.1]}
       >
-        <RocketShip scale={20} position={[10, -4, -20]} />
+        <RocketShip
+          scale={20}
+          position={[10, -13, -20]}
+          onClick={() => {
+            window.open("https://www.youtube.com/watch?v=thOOR5TMDJE");
+          }}
+        />
       </Float>
-      <Stars count={700} />
-      <Html
-        transform
-        position-x={7}
-        position-y={3}
-        position-z={-20}
-        rotation-y={-Math.PI / 4}
-      >
-        <div className="natural-disaster-text center">
-          FORGOTTEN TIME CAPSULE EXPOSITION
-        </div>
-      </Html>
-      <Html
-        transform
-        position-x={7}
+
+      <Text
+        position-x={-5}
         position-y={5}
-        position-z={-20}
-        rotation-y={-Math.PI / 4}
+        position-z={-5}
+        rotation-y={Math.PI / 4}
+        font={"fonts/poppins/Poppins-Bold.ttf"}
       >
-        <div className="final-webcup-text center">WEBCUP FINAL 2022</div>
-      </Html>
+        WEBCUP FINAL 2023
+        <meshBasicMaterial color="whitesmoke" />
+      </Text>
 
-      <Html
-        transform
-        position-x={8}
-        position-y={1}
-        position-z={-21}
-        rotation-y={-Math.PI / 4}
+      <Text
+        position-x={-5}
+        position-y={3}
+        position-z={-6}
+        rotation-y={Math.PI / 4}
+        fontSize={0.4}
+        font={"fonts/poppins/Poppins-Bold.ttf"}
       >
-        <div className="winner-text-container">
-          <div style={{ width: "15%", height: "100%" }} className="center">
-            <img
-              style={{ objectFit: "contain", width: "100%", height: "100%" }}
-              src="/img/couronne-de-laurier.png"
-            />
-          </div>
-          <div
-            style={{ width: "85%", height: "100%" }}
-            className="winner-text center"
-          >
-            MAYOTTES - Ylangs
-          </div>
-        </div>
-      </Html>
+        MADAGASCAR - Angry Geek
+        <meshBasicMaterial color="#f7b900" />
+      </Text>
 
-      <Html transform position-x={0} position-y={3} position-z={-27}>
-        <div className="other-year-coming-text center">2010-2021 will come</div>
-      </Html>
+      <Text
+        position-x={-5}
+        position-y={2}
+        position-z={-2}
+        rotation-y={Math.PI / 4}
+        fontSize={0.3}
+        font={"fonts/poppins/Poppins-Bold.ttf"}
+      >
+        Click This
+        <meshBasicMaterial color="whitesmoke" />
+      </Text>
+      <Text
+        position-x={5}
+        position-y={2}
+        position-z={-2}
+        rotation-y={-Math.PI / 4}
+        fontSize={0.3}
+        font={"fonts/poppins/Poppins-Bold.ttf"}
+      >
+        Click This
+        <meshBasicMaterial color="whitesmoke" />
+      </Text>
 
-      <Html
-        transform
+      <Stars count={700} />
+
+      <Text
+        position-x={-5}
+        position-y={4}
+        position-z={-6}
+        rotation-y={Math.PI / 4}
+        fontSize={0.4}
+        font={"fonts/poppins/Poppins-Bold.ttf"}
+      >
+        NATURAL DISASTERS PREVENTION
+        <meshBasicMaterial color="whitesmoke" />
+      </Text>
+
+      <Text
+        position-x={5}
+        position-y={5}
+        position-z={-10}
+        rotation-y={-Math.PI / 4}
+        font={"fonts/poppins/Poppins-Bold.ttf"}
+      >
+        WEBCUP FINAL 2022
+        <meshBasicMaterial color="whitesmoke" />
+      </Text>
+
+      <Text
+        position-x={5}
+        position-y={3}
+        position-z={-6}
+        rotation-y={-Math.PI / 4}
+        fontSize={0.4}
+        font={"fonts/poppins/Poppins-Bold.ttf"}
+      >
+        MAYOTTES - Ylangs Ylangs
+        <meshBasicMaterial color="#f7b900" />
+      </Text>
+
+      <Stars count={700} />
+
+      <Text
+        position-x={5}
+        position-y={4}
+        position-z={-6}
+        rotation-y={-Math.PI / 4}
+        fontSize={0.4}
+        font={"fonts/poppins/Poppins-Bold.ttf"}
+      >
+        FORGOTTEN TIME CAPSULE EXPOSITION
+        <meshBasicMaterial color="whitesmoke" />
+      </Text>
+
+      <Text
         position-x={0}
-        position-y={0}
+        position-y={2}
+        position-z={-27}
+        fontSize={0.6}
+        font={"fonts/poppins/Poppins-Bold.ttf"}
+      >
+        Past 2010-2021 will come in the timeline
+        <meshBasicMaterial color="whitesmoke" />
+      </Text>
+
+      <Text
+        position-x={0}
+        position-y={0.2}
         position-z={-8}
+        fontSize={3}
         rotation-x={-Math.PI / 2}
         rotation-z={Math.PI / 2}
+        font={"fonts/poppins/Poppins-Bold.ttf"}
       >
-        <div className="webcup-timeline-text center">WEBCUP TIMELINE</div>
-      </Html>
+        WEBCUP TIMELINE
+        <meshBasicMaterial color="whitesmoke" />
+      </Text>
+      <Video />
     </>
   );
 };
-
+function Video() {
+  const textureVideo = useVideoTexture("/videos/0505.mp4");
+  return (
+    <>
+      <mesh position={[0, 2, -40]}>
+        <planeGeometry args={[15, 8]} rotation={[-Math.PI / 2, 0, 0]} />
+        <meshBasicMaterial map={textureVideo} />
+      </mesh>
+    </>
+  );
+}
 export default StaticModels;

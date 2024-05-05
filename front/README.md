@@ -10,3 +10,9 @@ Currently, two official plugins are available:
 license
 
 Block Character by J-Toastie [CC-BY] via Poly Pizza
+
+Volcano by Poly by Google [CC-BY] via Poly Pizza
+
+<a href="https://www.flaticon.com/fr/icones-gratuites/couronne-de-laurier" title="couronne de laurier icônes">Couronne de laurier icônes créées par Freepik - Flaticon</a>
+
+Volcano by Poly by Google [CC-BY] via Poly Pizza

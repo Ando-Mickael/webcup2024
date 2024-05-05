@@ -45,6 +45,9 @@
   z-index: 5;
   width: 100%;
   height: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 .switch-frame-ui {
   width: 100px;

@@ -2,17 +2,18 @@ import {
   Environment,
   Float,
   PerspectiveCamera,
+  Stars,
   useTexture,
 } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Vector3 } from "three";
-import { BlockCharacter } from "../../../public/models/Block Character";
-
+import { BlockCharacter } from "../Models/Block Character";
 import "./VeteranGallery.css";
-
+import useSWR from "swr";
+import { fetcher } from "../../lib/api";
 gsap.registerPlugin(ScrollTrigger);
 
 function getRandomPosition() {
@@ -27,19 +28,23 @@ for (let index = 0; index < 50; index++) {
   randomPositions.push(getRandomPosition());
 }
 const VeteranGallery = () => {
-  const [data, setData] = useState();
+  // const [data, setData] = useState();
   const [currentImage, setCurrentImage] = useState(0);
-  useEffect(() => {
-    setData([
-      "img1.jpg",
-      "img1.jpg",
-      "img1.jpg",
-      "img1.jpg",
-      "img1.jpg",
-      "img1.jpg",
-      "img1.jpg",
-    ]);
-  }, []);
+  const { data, error, isLoading } = useSWR(
+    "http://192.168.88.17:1234/crud/photo",
+    fetcher
+  );
+  // useEffect(() => {
+  //   setData([
+  //     "img1.jpg",
+  //     "img1.jpg",
+  //     "img1.jpg",
+  //     "img1.jpg",
+  //     "img1.jpg",
+  //     "img1.jpg",
+  //     "img1.jpg",
+  //   ]);
+  // }, []);
   const [positionToLookAt, setPositionToLookAt] = useState(
     new Vector3(0, 0, 0)
   );
@@ -76,52 +81,69 @@ const VeteranGallery = () => {
     setStartCameraLookAtAnimation(true);
   }
   return (
-    <div className="veteran-gallery-container">
-      <div className="veteran-gallery-title center">
-        GALLERY FOR WEBCUP VETERAN
-      </div>
-      <div className="canvas-container">
-        <Canvas>
-          <color attach="background" args={["#ed156d"]} />
-          <axesHelper />
-          <Experience
-            positionToLookAt={positionToLookAt}
-            cameraPosition={cameraPosition}
-            setCameraPosition={setCameraPosition}
-            targetCameraPosition={targetCameraPosition}
-            startCameraPositionAnimation={startCameraPositionAnimation}
-            setStartCameraPositionAnimation={setStartCameraPositionAnimation}
-            setPositionToLookAt={setPositionToLookAt}
-            setStartCameraLookAtAnimation={setStartCameraLookAtAnimation}
-            targetCameraLookAt={targetCameraLookAt}
-            startCameraLookAtAnimation={startCameraLookAtAnimation}
-            data={data}
-          />
-        </Canvas>
-      </div>
-      <div className="switch-frame-ui-container center">
-        <div
-          className="switch-frame-ui center"
-          onClick={() => {
-            if (!startCameraLookAtAnimation && !startCameraPositionAnimation) {
-              moveFrame(10);
-            }
-          }}
-        >
-          Back
-        </div>
-        <div
-          className="switch-frame-ui center"
-          onClick={() => {
-            if (!startCameraLookAtAnimation && !startCameraPositionAnimation) {
-              moveFrame(-10);
-            }
-          }}
-        >
-          Next
-        </div>
-      </div>
-    </div>
+    <>
+      {isLoading ? (
+        <></>
+      ) : (
+        <>
+          <div className="veteran-gallery-container">
+            <div className="veteran-gallery-title center">
+              GALLERY FOR WEBCUP VETERAN
+            </div>
+            <div className="canvas-container">
+              <Canvas>
+                <color attach="background" args={["black"]} />
+                <Stars />
+                <axesHelper />
+                <Experience
+                  positionToLookAt={positionToLookAt}
+                  cameraPosition={cameraPosition}
+                  setCameraPosition={setCameraPosition}
+                  targetCameraPosition={targetCameraPosition}
+                  startCameraPositionAnimation={startCameraPositionAnimation}
+                  setStartCameraPositionAnimation={
+                    setStartCameraPositionAnimation
+                  }
+                  setPositionToLookAt={setPositionToLookAt}
+                  setStartCameraLookAtAnimation={setStartCameraLookAtAnimation}
+                  targetCameraLookAt={targetCameraLookAt}
+                  startCameraLookAtAnimation={startCameraLookAtAnimation}
+                  data={data}
+                />
+              </Canvas>
+            </div>
+            <div className="switch-frame-ui-container center">
+              <div
+                className="switch-frame-ui center"
+                onClick={() => {
+                  if (
+                    !startCameraLookAtAnimation &&
+                    !startCameraPositionAnimation
+                  ) {
+                    moveFrame(10);
+                  }
+                }}
+              >
+                Back
+              </div>
+              <div
+                className="switch-frame-ui center"
+                onClick={() => {
+                  if (
+                    !startCameraLookAtAnimation &&
+                    !startCameraPositionAnimation
+                  ) {
+                    moveFrame(-10);
+                  }
+                }}
+              >
+                Next
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
@@ -192,10 +214,10 @@ function ImageFrames({ data }) {
   return (
     <>
       {data &&
-        data.map((url, index) => (
+        data.map((data, index) => (
           <ImageFrame
             key={"img" + index}
-            url={"/public/img/" + url}
+            url={data.link}
             position={[0, -index * 10, 0]}
             name={"La victoire de Madagascar"}
           />
@@ -205,12 +227,6 @@ function ImageFrames({ data }) {
 }
 function ImageFrame({ url, position, name }) {
   const texture = useTexture(url);
-
-  const textPosition = new Vector3(
-    position[0] - 3,
-    position[1] + 3,
-    position[2]
-  );
   return (
     <group position={position}>
       <Float

@@ -2,179 +2,179 @@
 /* DASHBOARD */
 /*  */
 .dashboard {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: grid;
-  z-index: 1;
-  position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    z-index: 1;
+    position: relative;
 }
 
 .limit-scroll {
-  overflow-y: scroll;
-  width: 90%;
-  height: 120px;
-  scrollbar-width: thin;
-  scrollbar-color: #fff rgba(255, 255, 255, 0.5);
-  margin: 10px;
-  border-radius: 20px;
-  text-align: center;
+    overflow-y: scroll;
+    width: 90%;
+    height: 120px;
+    scrollbar-width: thin;
+    scrollbar-color: #fff rgba(255, 255, 255, 0.5);
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
 }
 
 .limit-scroll::-webkit-scrollbar {
-  width: 1px;
+    width: 1px;
 }
 
 .limit-scroll::-webkit-scrollbar-thumb {
-  background-color: #fff;
-  border-radius: 10px;
+    background-color: #fff;
+    border-radius: 10px;
 }
 
 .limit-scroll::-webkit-scrollbar-track {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
 }
 
 .tableau-style {
-  border-collapse: collapse;
-  border: none;
-  width: 100%;
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
 }
 
 .tableau-style thead {
-  font-family: "Poppins";
+    font-family: 'Poppins';
 }
 
 .tableau-style thead tr {
-  color: white;
+    color: white;
 }
 
 .tableau-style tbody td {
-  color: #fff;
-  font-size: 15px;
-  font-family: "Poppins";
-  padding: 5px;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Poppins';
+    padding: 5px;
 }
 
 /* Tableau 2 */
 .limit-scroll-2 {
-  overflow-y: scroll;
-  width: auto;
-  height: 150px;
-  scrollbar-width: thin;
-  scrollbar-color: #fff rgba(255, 255, 255, 0.5);
-  margin: 10px;
-  border-radius: 20px;
-  text-align: center;
+    overflow-y: scroll;
+    width: auto;
+    height: 150px;
+    scrollbar-width: thin;
+    scrollbar-color: #fff rgba(255, 255, 255, 0.5);
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
 }
 
 .limit-scroll-2::-webkit-scrollbar {
-  width: 1px;
+    width: 1px;
 }
 
 .limit-scroll-2::-webkit-scrollbar-thumb {
-  background-color: #fff;
-  border-radius: 10px;
+    background-color: #fff;
+    border-radius: 10px;
 }
 
 .limit-scroll-2::-webkit-scrollbar-track {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
 }
 
+
 .tableau-style-2 {
-  border-collapse: collapse;
-  border: none;
-  width: 100%;
+    border-collapse: collapse;
+    border: none;
+    width: 100%;
 }
 
 .tableau-style-2 thead {
-  font-family: "Poppins";
+    font-family: 'Poppins';
 }
 
 .tableau-style-2 thead tr {
-  color: white;
+    color: white;
 }
 
 .tableau-style-2 tbody td {
-  color: #fff;
-  font-size: 15px;
-  font-family: "Poppins";
-  padding: 3px 0;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Poppins';
+    padding: 3px 0;
 }
 
 .badge {
-  display: flex;
-  width: auto;
-  height: 285px;
-  border-radius: 40px;
-  background-color: rgba(255, 255, 255, 0.1);
-  /* align-items: center; */
-  flex-direction: column;
-  margin: 10px;
+    display: flex;
+    width: auto;
+    height: 285px;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* align-items: center; */
+    flex-direction: column;
+    margin: 10px;
 }
 
 .donation {
-  display: flex;
-  width: 580px;
-  height: 250px;
-  border-radius: 40px;
-  background-color: rgba(255, 255, 255, 0.1);
-  align-items: center;
-  flex-direction: column;
-  margin: 0 8px 0 0;
+    display: flex;
+    width: 580px;
+    height: 250px;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    align-items: center;
+    flex-direction: column;
+    margin: 0 8px 0 0;
 }
 
 .title-with-icon {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .title-with-icon h3 {
-  color: #fff;
-  font-size: 25px;
-  font-family: "Nebula";
-  padding: 0 20px;
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Nebula';
+    padding: 0 20px;
 }
 
 .title-with-icon .icon-ui {
-  margin: 10px;
+    margin: 10px;
 }
 
 .tantely-gif img {
-  width: 700px;
-  height: 250px;
-  border-radius: 30px;
+    width: 700px;
+    height: 250px;
+    border-radius: 30px;
 }
 
 .first-dash {
-  margin: 0 10px;
-  display: flex;
-  justify-content: start;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 10px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 1280px) {
-  .donation {
-    width: 550px;
-  }
+    .donation{
+        width: 550px;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
-  .dashboard {
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  .donation {
-    width: 300px;
-  }
+    .dashboard {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .donation{
+        width: 300px;
+    }
 }
 @media only screen and (max-width: 900px) {
-  .tantely-gif {
-    width: 300px;
-  }
+    .tantely-gif{
+        width: 300px;
+    }
 }

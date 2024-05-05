@@ -2,7 +2,8 @@ import { atom, useAtom } from "jotai";
 import { useEffect } from "react";
 import { io } from "socket.io-client";
 
-export const socket = io("http://localhost:1234");
+// export const socket = io("http://localhost:1234");
+export const socket = io("http://192.168.88.17:1234");
 export const charactersAtom = atom([]);
 export const userAtom = atom(null);
 

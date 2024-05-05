@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UploadPhoto from "./components/UploadPhoto";
-import IndexPage from "./pages/IndexPage";
+import LandingUI from "./pages/Landing";
 import Museum from "./pages/Museum";
 import VeteranGalleryPage from "./pages/VeteranGalleryPage/VeteranGalleryPage";
 import Dashboard from "./pages/admin/Dashboard";
@@ -8,7 +8,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 
 const routes = [
-  { path: "/", element: <IndexPage /> },
+  { path: "/", element: <LandingUI /> },
   { path: "/admin/dashboard", element: <Dashboard /> },
   { path: "/auth/login", element: <Login /> },
   { path: "/auth/register", element: <Register /> },
